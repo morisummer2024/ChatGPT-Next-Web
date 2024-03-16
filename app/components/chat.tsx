@@ -835,13 +835,7 @@ function _Chat() {
   };
   const onRightClick = (e: any, message: ChatMessage) => {
     // copy to clipboard
-    if (selectOrCopy(e.currentTarget, getMessageTextContent(message))) {
-      if (userInput.length === 0) {
-        setUserInput(getMessageTextContent(message));
-      }
-
-      e.preventDefault();
-    }
+    onResend(message);
   };
 
   const deleteMessage = (msgId?: string) => {
